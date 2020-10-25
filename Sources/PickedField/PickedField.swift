@@ -58,3 +58,12 @@ public protocol PickedField: AnyObject {
         animated: Bool)
 }
 
+extension PickedField {
+    
+    /**
+     Wraps this field with a type eraser.
+     */
+    public func eraseToAnyPickedField() -> AnyPickedField<Value> {
+        AnyPickedField(source: self)
+    }
+}
